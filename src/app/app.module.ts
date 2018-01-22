@@ -4,12 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { IcolistComponent } from './icolist/icolist.component'
+import { IcolistComponent } from './icolist/icolist.component';
+import { HeaderComponent } from './header/header.component';
+import { IntroductionComponent } from './introduction/introduction.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    IcolistComponent
+    IcolistComponent,
+    HeaderComponent,
+    IntroductionComponent
   ],
   imports: [
     BrowserModule,
