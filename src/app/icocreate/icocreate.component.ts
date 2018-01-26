@@ -9,20 +9,30 @@ import { IcoService } from '../ico.service';
   styleUrls: ['./icocreate.component.css']
 })
 export class IcocreateComponent implements OnInit {
-  get icoData(): { id: number; companyName: string; companyDescription: string; companyLogoUrl: string; tokenName: string; overallScore: number; icoStatus: string; icoStartDate: string; icoEndDate: string; whitelistStartDate: string; whitelistEndDate: string; tokenSaleScore: number; telegramUrl: string; mediumFollowers: number; twitterFollowers: number; facebookFollowers: number; telegramFollowers: number; productPotential: number; productExisting: number; productScore: number; peopleTeam: number; peopleAdvisors: number; financialsTokenEth: number; financialsUsdToken: number; financialsCircSupplyEth: number; financialsCircSupplyTokens: number; financialsHardCap: number; financialsSupplyIco: number; financialsSupplyPresale: number; financialsSupplyDiscount: number; externalPartners: number; externalInfuencers: number; externalVcFirms: number } {
-    return this._icoData;
+  icoStored: number
+
+  company = {
+    name: '',
+    logoUrl: '',
+    description: ''
   }
 
-  set icoData(value: { id: number; companyName: string; companyDescription: string; companyLogoUrl: string; tokenName: string; overallScore: number; icoStatus: string; icoStartDate: string; icoEndDate: string; whitelistStartDate: string; whitelistEndDate: string; tokenSaleScore: number; telegramUrl: string; mediumFollowers: number; twitterFollowers: number; facebookFollowers: number; telegramFollowers: number; productPotential: number; productExisting: number; productScore: number; peopleTeam: number; peopleAdvisors: number; financialsTokenEth: number; financialsUsdToken: number; financialsCircSupplyEth: number; financialsCircSupplyTokens: number; financialsHardCap: number; financialsSupplyIco: number; financialsSupplyPresale: number; financialsSupplyDiscount: number; externalPartners: number; externalInfuencers: number; externalVcFirms: number }) {
-    this._icoData = value;
+  followers = {
+    twitter: 0,
+    facebook: 0,
+    medium: 0,
+    telegram: 0,
   }
-  icoStored: number
-  private _icoData = {
+
+  icoData = {
     id: 0,
-    companyName: '',
-    companyDescription: '',
-    companyLogoUrl: '',
-    // icoDate: new Date(),
+    company: this.company,
+    followers: this.followers,
+
+
+
+
+/*    // icoDate: new Date(),
     // hardCap: 0,
     // created: new Date()
     tokenName: '',
@@ -55,7 +65,7 @@ export class IcocreateComponent implements OnInit {
     financialsSupplyDiscount: 0,
     externalPartners: 0,
     externalInfuencers: 0,
-    externalVcFirms: 0
+    externalVcFirms: 0*/
 
   }
 
@@ -73,8 +83,8 @@ export class IcocreateComponent implements OnInit {
     ico.id = this.icoStored
     // console.log("craeteNew called with argument", ico);
 
-    localStorage.setItem('icolist' + ico.id, JSON.stringify(ico))
-    localStorage.setItem('icoStored', this.icoStored)
+    localStorage.setItem('icolist' + ico.id, JSON.stringify(ico));
+    localStorage.setItem('icoStored', this.icoStored.toString());
   }
 
 }
