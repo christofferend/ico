@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IcoService } from '../ico.service'
+
 @Component({
   selector: 'app-icolist',
   templateUrl: './icolist.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IcolistComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private icoService: IcoService
+  ) {}
 
   ngOnInit() {
   }
+
 
 }

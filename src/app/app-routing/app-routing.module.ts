@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IcocreateComponent } from '../icocreate/icocreate.component'
-import { IntroductionComponent } from '../introduction/introduction.component'
-import { IcolistComponent } from '../icolist/icolist.component'
+import { IcocreateComponent } from '../icocreate/icocreate.component';
+import { IntroductionComponent } from '../introduction/introduction.component';
+import { IcolistComponent } from '../icolist/icolist.component';
+import { IcodetailsComponent } from '../icodetails/icodetails.component';
 
 const routes: Routes = [
     {
         path: 'create',
         component: IcocreateComponent,
+    },
+    {
+        path: 'icodetails',
+        component: IcodetailsComponent,
     },
     {
         path: '',
@@ -25,7 +30,7 @@ const routes: Routes = [
     imports: [
         RouterModule.forRoot(
           routes,
-          { enableTracing: true } // <-- debugging purposes only)
+          { enableTracing: false } // <-- debugging purposes only
         )
     ],
     exports: [
